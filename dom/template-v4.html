@@ -1,0 +1,26 @@
+<!--Aula: Binding de Atributos -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+
+    <a v-bind:href="link">Google - Clique aqui!</a> <!-- V-BIND serve para fazer essa ligação. -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS - 4',
+            link: 'https://www.google.com.br/' //  v-bind para interligar o atributo href do elemento ao valor da expressão url.
+        
+        },
+        methods: {
+            saudacao: function() { // para chamar com outro no e mudar tem que usa o this. antes
+              return this.titulo 
+            }
+        }
+    })
+</script>

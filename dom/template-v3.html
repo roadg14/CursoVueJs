@@ -1,0 +1,27 @@
+<!--Aula: Acessando Dados na Instância VueJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>Meu nome é {{ primeiro() }} e meu sobrenome é {{ segundo() }} e fica {{ primeiro() + segundo() }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS - 3',
+            nome: 'Douglas ',
+            sobrenome: 'Rodrigues'
+        },
+        methods: {
+            primeiro: function() { // para chamar com outro no e mudar tem que usa o this. antes
+              return this.nome 
+            },
+            segundo: function() {
+                return this.sobrenome
+            }
+        }
+    })
+</script>

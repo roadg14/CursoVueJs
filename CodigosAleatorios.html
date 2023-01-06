@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p class="text">Sorteios de números</p>
+    
+    <div class="sorteio">
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+        <p>{{Math.floor(Math.random() * 60)}}</p> 
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+    })
+</script>
+
+<style>
+    .sorteio {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 40px;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        font-size: 50px;
+        font-family: fantasy;
+    }
+
+    .button {
+        display: flex;
+        justify-content: end;
+    }
+</style>

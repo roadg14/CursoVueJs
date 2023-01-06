@@ -1,0 +1,31 @@
+<!--Aula: Usando two-way-binding -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>Maneiras de aplicar o two way data binding</p>
+    <p>{{ titulo }}</p>
+    <br>
+
+    <!-- Usando v-on e v-bind -->
+    <input type="text" v-bind:value="titulo" v-on:input="mudar">
+    <br>
+
+    <!-- o v-model garante o two way data binding sem precisar usar o v-on em conjunto com o v-bind -->
+    <input type="text" v-model="titulo"> <!-- Usando o v-model -->
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Olá Douglas!'
+        },
+        methods: {
+            mudar(e){
+                this.titulo = e.tagert.value
+            }
+        },
+    })
+</script>

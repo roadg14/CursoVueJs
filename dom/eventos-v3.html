@@ -1,0 +1,35 @@
+<!--Aula: Passando nossos próprios argumentos com eventos -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+
+    <!-- Para poder da o evento la para a função tem que usar o $event-->
+    <button v-on:click="somar(5, $event)">+1</button>
+
+    <!-- v-on:mousemove=""  Movimentar o mouse -->
+    <p v-on:mousemove="atualizarPosicoesXY">Mouse: {{ x }} e {{ y }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0
+        },
+        methods: { //adicionando no v-on:click fazendo a soma
+            somar(passo, e){ // a função para somar e outra para subtrair
+                console.log(passo, e) // La no console vai mostrar o event
+                this.contador += passo
+            },
+            atualizarPosicoesXY(e){ // Event esse função para mostra a posição de X e Y
+                //console.log(e)
+                this.x = e.clientX // 
+                this.y = e.clientY
+            } 
+        }
+    })
+</script>

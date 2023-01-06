@@ -1,0 +1,46 @@
+<!--Aula: propriedades computadas -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="incrementarNumero">Aumentar número</button>
+    <button v-on:click="diminuirNumero">Diminuir número</button>
+    <p>Número: {{numero}}</p>
+    <p>Resultado: {{resultadoNumero()}}</p>
+    <p>Resultado computed: {{resultadoNumeroComp}}</p>
+    
+    <br><hr>
+
+    <button v-on:click="contador++">Aumentar</button>
+    <button v-on:click="contador--">Diminuir</button>
+    <p>Contador: {{contador}}</p>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            numero: 0,
+            contador: 0
+        },
+        computed: {
+            resultadoNumeroComp(){
+                console.log('Função computed resultadoNumeroComp() foi chamada pois realmente houve mudança no valor do numero')
+                return this.numero < 5 ? 'o número 1 é menor que 5' : 'o número 1 é maior que 5'
+            }
+        },
+        methods: {
+            incrementarNumero(){
+                this.numero++
+            },
+            diminuirNumero(){
+                this.numero--;
+            },
+            resultadoNumero(){ 
+                console.log('Função resultadoNumero() foi chamada')
+                return this.numero < 5 ? 'o número 1 é menor que 5' : 'o número 1 é maior que 5'
+            }
+        }
+    })
+</script>

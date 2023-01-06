@@ -1,0 +1,34 @@
+<!--Aula: Evitando re-renderização com v-once -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!-- Diretiva v-once impedirá atualização do parágrafo quando o método saudacao for chamado-->
+    <p v-once>{{ titulo }}</p>
+
+    <!-- O parágrafo será atualizado pois não está com a diretiva v-once -->
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+
+    <a v-bind:href="link">Google - Clique aqui!</a> <!-- V-BIND serve para fazer essa ligação. -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS - 5',
+            link: 'https://www.google.com.br/' //  v-bind para interligar o atributo href do elemento ao valor da expressão url.
+        
+        },
+        methods: {
+            saudacao: function() { // para chamar com outro no e mudar tem que usa o this. antes
+                this.modificarMensagem()
+                return this.titulo 
+            },
+            modificarMensagem() {
+                this.titulo = 'Nova mensagem: Bom dia!'
+            }
+        }
+    })
+</script>

@@ -1,0 +1,18 @@
+A configuração inicial do projeto pode ser encontrada no JSFiddle: https://jsfiddle.net/smax/c4mcxu7s/
+
+Você pode encontrar a configuração local anexada a essa aula.
+
+Alguns editores que você pode usar:
+
+Visual Studio Code: https://code.visualstudio.com/ - Usado no Curso!
+
+Atom: https://atom.io/
+
+Sublime: https://www.sublimetext.com/
+
+Webstorm: https://www.jetbrains.com/webstorm/
+
+Links Úteis:
+
+Documentação Oficial - Instalação: https://br.vuejs.org/v2/guide/installation.html
+

@@ -1,0 +1,27 @@
+<!--Aula: Escutando eventos -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <!-- Aplicando estilo mais complexo através de propriedade computada -->
+    <p>{{ contador }}</p>
+    <button v-on:click="somar">+1</button> 
+    <button v-on:click="subtrair">-1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: { //adicionando no v-on:click fazendo a soma
+            somar() { // a função para somar e outra para subtrair
+                this.contador++
+            },
+            subtrair() {
+                this.contador--
+            }
+        }
+    })
+</script>
