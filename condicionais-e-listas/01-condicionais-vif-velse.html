@@ -1,0 +1,20 @@
+<!--Aula: Renderização com condicional v-if e v-else -->
+
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p v-if="logado">Usuário Logado: {{ nome }}</p> <!-- v-if -->
+    <p v-else>Nenhum usuário logado</p> <!-- v-else -->
+    <button @click="logado = !logado">{{  logado ? 'Sair' : 'Entrar'}}</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Douglas',
+            logado: false
+        }
+    })
+</script>
