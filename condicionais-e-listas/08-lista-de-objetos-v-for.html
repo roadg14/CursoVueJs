@@ -1,0 +1,59 @@
+<!--Aula: Iterando em Objetos -->
+
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <!-- Podemos utilizar a diretiva v-for para renderizar uma lista de elementos com base nos dados de um Array.  -->
+        <!-- i é para o indice -->
+        <li v-for="(cor, i) in cores">{{ i + 1 }}) - {{ cor }}</li>
+    </ul>
+    <hr>
+    <template v-for="(cor, i) in cores"> <!-- Usando o v-for em template muda, não é igual numa div-->
+        <h1>{{ cor }}</h1> <!-- Eo data com as cores.-->
+        <p>{{ i }}</p> <!-- O indeci -->
+    </template>
+    <hr>
+    <ul>
+        <li v-for="pessoa in pessoas">{{ pessoa.nome }} {{pessoa.idade}}</li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(pessoa, i) in pessoas">{{i}}) {{ pessoa.nome }}</li>
+    </ul>
+    <hr>
+    <ul>
+        <!-- percorre por cada pessoa na lista-->
+        <!-- aparte de um ponto -> . // Consegue acessar o atributo de um objeto em javascript -->
+        <li v-for="pessoa in pessoas"> <!-- Uma lista tambem. -->
+            <div v-for="(valor, chave, index) in pessoa"> <!-- percorre por cada atributo de uma pessoa-->
+                {{ chave }} = {{ valor }} ({{index}})
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: 'Douglas', idade: 25, peso: 85},
+                { nome: 'Guilherme', idade: 18, peso: 55}
+            ]
+        }
+    })
+</script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+    
+    h1, p {
+        display: inline;
+    }
+</style>

@@ -4,10 +4,16 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 <div id="app">
-    <template v-if="logado">
+    <!-- O v-show apenas esconde os elementos através da propriedade display:none do css -->
+    <p v-show="!logado">Por favor faça o Login</p>
+    <p v-show="logado">Seja bem vindo!</p>
+
+    <!-- O v-if remove o elemento, diferente do v-show que apenas esconde via css -->
+    <template v-if="logado && !anonimo">
         <p>Usuário Logado: {{ nome }}</p>
         <p>Perfil: Admin</p>
     </template>
+
     <p v-else-if="anonimo">Navengando como Anônimo</p>
     <p v-else>Nenhum usuário logado</p>
     <button @click="logado = !logado">{{  logado ? 'Sair' : 'Entrar'}}</button>
@@ -18,7 +24,7 @@
         Desenvolvido por Douglas Rodrigues!!!
     </footer>
     <footer v-show="!logado">
-        Desenvolvido para testes!!!
+        Desenvolvido por Douglas Rodrigues!!!
     </footer>
 </div>
 
@@ -29,6 +35,11 @@
             nome: 'Douglas',
             logado: false,
             anonimo: false
+        },
+        methods: {
+            login(){
+                this.logado = this.logado == true ? false : true
+            }
         }
     })
 </script>

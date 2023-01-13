@@ -1,0 +1,41 @@
+<!--Aula: Usando v-for comtemplate -->
+
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <!-- Podemos utilizar a diretiva v-for para renderizar uma lista de elementos com base nos dados de um Array.  -->
+        <!-- i é para o indice -->
+        <li v-for="(cor, i) in cores">{{ i + 1 }}) - {{ cor }}</li>
+    </ul>
+    <hr>
+    <template v-for="(cor, i) in cores"> <!-- Usando o v-for em template muda, não é igual numa div-->
+        <h1>{{ cor }}</h1> <!-- Eo data com as cores.-->
+        <p>{{ i }}</p> <!-- O indeci -->
+    </template>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: 'Douglas', idade: 25, peso: 85},
+                { nome: 'Guilherme', idade: 18, peso: 55}
+            ]
+        }
+    })
+</script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+    
+    h1, p {
+        display: inline;
+    }
+</style>
