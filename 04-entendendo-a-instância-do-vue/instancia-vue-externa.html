@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- Instância 1 -->
+<div id="app1">
+    {{ titulo1 }}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<!-- Instância 2 -->
+<div id="app2">
+    {{ titulo2 }}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    // Adicionando o newVue em const podemos alterar com os methods usando de cada const.
+    // vm1 -> pode ser usado no vm2.
+    const vm1 = new Vue({
+        el: '#app1',
+        data: {
+            titulo1: 'Teste1'
+        },
+        methods: {
+            alterar() {
+                vm2.titulo2 += ' !!!!!'
+            }
+        },
+    })
+
+    // vm2 -> poder ser utilizado no vm1. só 
+    const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            titulo2: 'Teste2'
+        },
+        methods: {
+            alterar() {
+                vm1.titulo1 += ' ?????'
+            }
+        }
+    })
+
+    setTimeout(() => { // ao inves de usar o this. como é const pode se usar do jeito que está.
+        vm1.titulo1 = 'Alterar ao time!'
+        vm2.titulo2 = 'Alterar ao time!'
+    }, 2000)
+</script>
