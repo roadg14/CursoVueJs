@@ -1,6 +1,6 @@
 vue-cli-plugin-
 vue-cli-plugin-electron-builder - 'vue add electron-builder'
 
-vue-cli-plugin-vuetify 
+vue-cli-plugin-vuetify - 'vue add vuetify'
 
 https://vuetifyjs.com/en/

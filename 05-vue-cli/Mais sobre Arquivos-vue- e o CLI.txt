@@ -1,0 +1,10 @@
+Mais sobre Arquivos ".vue" e o CLI
+O Arquivo ".vue"
+
+Você pode aprender mais sobre o arquivo ".vue" nesse artigo da documentação oficial: https://br.vuejs.org/v2/guide/single-file-components.html
+
+Você pode aprender mais sobre o método  render()  nesse outro artigo na documentação oficial: https://br.vuejs.org/v2/guide/render-function.html
+
+The CLI
+
+Aprenda mais sobre o Vue CLI aqui: https://cli.vuejs.org/
