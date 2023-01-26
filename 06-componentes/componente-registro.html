@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Revisão de componentes!</title>
+</head>
+<body>
+    <div id="app1">
+        <contador1></contador1>
+        <contador1></contador1>
+    </div>
+    <hr>
+    <div id="app2">
+        <contador2></contador2>
+        <contador2></contador2>
+    </div>
+    <hr>
+    <!-- Uma forma de se chamar tambem la em components.-->
+    <div id="app3">
+        <app-contador></app-contador>
+        <app-contador></app-contador>
+    </div>
+</body>
+
+<script>
+    // Registro não gerais. 
+    const contador = {
+        template: `
+        <div>
+        <input type="number" :value="contador" readonly>
+          <button @click="contador--">-</button>
+          <button @click="contador++">+</button>
+        </div>
+        `,
+        data() {
+            return {
+                contador: 0
+            }
+        }
+    }
+
+    new Vue({
+        el: '#app1',
+        // Registro Local.
+        components: {
+            contador1: contador
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        components: {
+            contador2: contador
+        }
+    })
+
+    new Vue({
+        el: '#app3',
+        components: {
+            'app-contador': contador
+        }
+    })
+</script>
+</html>
