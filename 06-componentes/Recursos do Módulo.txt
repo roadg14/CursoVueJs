@@ -1,0 +1,10 @@
+Recursos do Módulo & Links Úteis
+O código final desenvolvido neste módulo pode ser encontrado anexado a esta aula!
+
+Se você quiser aprender mais sobre componentes Vue JS, você talvez queira olhar esse artigo da documentação oficial:
+
+https://br.vuejs.org/v2/guide/components.html
+
+Importante: Alguns assuntos serão abordados nos próximos módulos do curso!
+
+Também ver: https://br.vuejs.org/v2/guide/components-registration.html
