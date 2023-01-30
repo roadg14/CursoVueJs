@@ -4,12 +4,20 @@
             <button @click="numero--">&lt;</button>
             <button @click="numero++">&gt;</button>
         </span>
-        {{ numero }} {{ indice }}
+        <Citacao>
+            <h1 slot="autor">{{ citacoes[indice].autor }}</h1> <!-- Propriedade slot que vai vincular no slot name no Citacao.vue-->
+            <p slot="texto">{{ citacoes[indice].texto }}</p>
+            <h5 slot="fonte">{{ citacoes[indice].fonte }}</h5>
+        </Citacao>
     </div>
 </template>
 
 <script>
+import Citacao from './Citacao.vue';
+
 export default {
+    // eslint-disable-next-line
+    components: { Citacao },
     data() {
         return {
             numero: 0,
@@ -41,5 +49,5 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    } 
 </style>
