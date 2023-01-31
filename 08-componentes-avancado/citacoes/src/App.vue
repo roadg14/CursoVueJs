@@ -5,7 +5,9 @@
 			<button @click="componente = 'Citacoes'">Citações</button>
 			<button @click="componente = 'Sobre'">Sobre</button>
 		</span>
-		<component :is="componente"/> <!-- Alterando entre Mútiplos componentes.-->
+		<keep-alive>
+			<component :is="componente"/> <!-- Alterando entre Mútiplos componentes.-->	
+		</keep-alive>	
 	</div>
 </template>
 

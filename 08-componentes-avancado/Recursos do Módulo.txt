@@ -1,0 +1,8 @@
+Recursos do Módulo & Links Úteis
+O código final desenvolvido neste módulo pode ser encontrado anexado a esta aula!
+
+Links Úteis:
+
+Documentação Oficial - Slots: https://br.vuejs.org/v2/guide/components.html#Distribuicao-de-Conteudo-com-Slots
+
+Documentação Oficial - Componentes Dinâmicos: https://br.vuejs.org/v2/guide/components.html#Componentes-Dinamicos
