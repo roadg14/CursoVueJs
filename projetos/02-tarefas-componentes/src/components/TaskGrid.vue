@@ -2,7 +2,8 @@
     <div class="task-grid">
         <template v-if="tasks.length"> <!-- tasks.length estiver definido ele vai avaliar as e se não estiver vai mostrar as tasks. -->
             <Task v-for="(task, i) in tasks" :key="task.name" :task="task"
-                @taskDeleted="$emit('taskDeleted', i)"></Task> <!-- Fazendo um props lá para o app.vue-->
+                @taskDeleted="$emit('taskDeleted', i)"
+                @taskStateChanged="$emit('taskStateChanged', i)"></Task> <!-- Fazendo um props lá para o app.vue-->
         </template>
         <p v-else class="no-task">Sua vida está em dia :)</p> <!-- Vai mostrar quando não tiver nenhuma task para se fazer.-->
     </div>

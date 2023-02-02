@@ -1,6 +1,8 @@
 <template>
-    <div class="task" :class="stateClass">
-        <span class="close" @click="$emit('taskDeleted', task)">X</span>
+    <div
+        @click="$emit('taskStateChanged', task)" 
+        class="task" :class="stateClass"> <!-- Changed é para verificar os status das tasks.-->
+        <span class="close" @click.stop="$emit('taskDeleted', task)">X</span> <!-- Com o stop. ele para tambem de propagar o click que acontecer com o @click.-->
         <p>{{ task.name }}</p>
     </div>
 </template>

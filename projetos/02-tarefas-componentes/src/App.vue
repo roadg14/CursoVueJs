@@ -1,23 +1,40 @@
 <template>
 	<div id="app">
 		<h1>Tarefas</h1>
+		<TasksProgress :progress="progress" />
 		<NewTask @taskAdded="addTask" />
-		<TaskGrid :tasks="tasks" @taskDeleted="deletedTask" />
+		<TaskGrid :tasks="tasks" 
+			@taskDeleted="deletedTask" 
+			@taskStateChanged="toggleTaskState" />
+		
 	</div>
 </template>
 
 <script>
+import TasksProgress from './components/TasksProgress.vue';
 import NewTask from './components/NewTask.vue';
 import TaskGrid from './components/TaskGrid.vue'
 
 export default {
-	components: { TaskGrid, NewTask },
+	components: { TaskGrid, NewTask, TasksProgress },
 	data() {
 		return {
-			tasks: [ // Lista de farefas.
-				{ name: 'Lavar a louça', pending: false},
-				{ name: 'Comprar controle', pending: true},
-			]
+			tasks: [] // Lista de farefas.
+		}
+	},
+	computed: {
+		progress() {
+			const total = this.tasks.length // Pegando o total de tasks.
+			const done = this.tasks.filter(t => !t.pending).length // Aqui vai passar um filtro para pegar aqueles que não estão pendentes. e o tamanho.
+			return Math.round(done / total * 100) || 0 // Calculando o percentual.
+		}
+	},
+	watch: { // um local para colocar o historico.JSON.
+		tasks: {
+			deep: true,
+			handle() {
+				localStorage.setItem('tasks', JSON.stringify(this.tasks))
+			}
 		}
 	},
 	methods: {
@@ -33,8 +50,16 @@ export default {
 		},
 		deletedTask(i) { // Criando o metodo de excluir
 			this.tasks.splice(i, 1) // Quantas tasks eu quero excluir.
+		},
+		toggleTaskState(i) {
+			this.tasks[i].pending = !this.tasks[i].pending
 		}
 	},
+	creater() {
+		const json = localStorage.getItem('tasks')
+		const array = JSON.parse(json)
+		this.tasks = Array.isArray(array) ? array : []
+	}
 }
 </script>
 
