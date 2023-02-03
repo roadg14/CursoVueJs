@@ -1,0 +1,18 @@
+Gatilhos - Hooks
+
+Site - https://br.vuejs.org/v2/guide/custom-directive.html#Funcoes-de-Gatilhos
+
+bind(el, binding, vnode) -> Quando a diretiva é interligada 
+com elemento.
+
+inserted(el, binding, vnode) -> Elemento inserido no nó pai.
+
+update(el, binding, vnode, oldNode) -> Quando o componente é atualizado
+(antes filhos).
+
+componentUpdated(el, binding, vnode, oldNode) -> Quando o componente é atualizado
+(depois filhos).
+
+unbind(el, binding, vnode) -> Quando a diretiva é desvinculada 
+do elemento.
+
