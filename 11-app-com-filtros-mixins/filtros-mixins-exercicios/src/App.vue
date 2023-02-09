@@ -2,6 +2,10 @@
 	<div id="app">
 		<h1>Filtros & Mixins</h1>
 		<hr>
+		<!-- Usando o mixins de Usuario.-->
+		<p>{{ usuarioLogado }}</p>
+
+		<hr>
 		<!-- Criando um Filto Local -->
 		<!-- Deixando o cpf com os pontos e traço. Ultilizando o filtro.-->
 		<p> {{ cpf | cpf | inverter }}</p>
@@ -29,12 +33,13 @@
 </template>
 
 <script>
+import usuarioMixin from './usuarioMixin'
 import frutasMixin from './frutasMixin' // Vindo Do arquivos.
 import Frutas from './Frutas.vue'
 
 export default {
 	components: { Frutas },
-	mixins: [frutasMixin],
+	mixins: [frutasMixin, usuarioMixin],
 	// Como fazer um filtro para CPF.
 	filters: {
 		cpf(valor) {
@@ -50,7 +55,10 @@ export default {
 			cpf: '60070080090',
 			nome: 'Douglas Rodrigues Ferreira Campos'
 		}
-	}
+	},
+	created() {
+        console.log('Created - App.vue!')
+    },
 }
 </script>
 

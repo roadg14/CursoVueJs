@@ -1,0 +1,8 @@
+Recursos do Módulo & Links Úteis
+O código final desenvolvido neste módulo pode ser encontrado anexado a esta aula!
+
+Links Úteis:
+
+Documentação Oficial - Filtros: https://br.vuejs.org/v2/guide/filters.html
+
+Documentação Oficial - Mixins: https://br.vuejs.org/v2/guide/mixins.html

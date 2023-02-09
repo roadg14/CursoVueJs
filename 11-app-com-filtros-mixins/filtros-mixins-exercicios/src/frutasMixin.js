@@ -2,7 +2,7 @@ export default {
     data() {
         return {
             fruta: '',
-            frutas: ['Banana', 'Maça', 'Melancia']
+            frutas: ['']
         }
     },
     methods: { // Um função para adicionar uma nova fruta.

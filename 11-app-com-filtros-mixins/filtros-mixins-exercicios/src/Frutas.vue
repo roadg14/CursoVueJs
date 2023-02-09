@@ -9,19 +9,25 @@
 </template>
 
 <script>
+import frutasMixin from './frutasMixin'
+import usuarioMixin from './usuarioMixin'
 export default {
-    data() {
-        return {
-            fruta: '',
-            frutas: ['Banana', 'Maça', 'Melancia']
-        }
-    },
-    methods: { // Um função para adicionar uma nova fruta.
-        add() {
-            this.frutas.push(this.fruta) // Push vai mandar para fruta.
-            this.fruta = ''
-        }
-    },
+    mixins: [frutasMixin, usuarioMixin], // Esse mixin que está no frutasmixins.js -> tem o data e os methods dentro fazendo a mesma coisa.
+    created() {
+        console.log('Created - Frutas.vue!')
+    }
+    //data() {
+    //  return {
+    //        fruta: '',
+    //        frutas: ['Banana', 'Maça', 'Melancia']
+    //    }
+    //},
+    //methods: { // Um função para adicionar uma nova fruta.
+    //    add() {
+    //        this.frutas.push(this.fruta) // Push vai mandar para fruta.
+    //        this.fruta = ''
+    //    }
+    //},
 }
 </script>
 
