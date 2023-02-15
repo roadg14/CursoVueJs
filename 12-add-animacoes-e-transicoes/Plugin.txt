@@ -1,0 +1,4 @@
+Plugin utilizado - https://www.npmjs.com/package/vue-cli-plugin-bootstrap-vue
+
+Referencia para Animate.css -> href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+Site -> https://animate.style/
