@@ -1,0 +1,23 @@
+Entendendo os Modos de Rotas (Hash vs History)
+Site -> https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations
+
+Hash -> localhost:8080/#/... 'Esse é o modo Hash'
+
+History -> localhost:8080/... 'Esse é o modo History'
+
+Usando o Modos
+
+mode: 'Hash' ou mode: 'History'
+
+no modo History eu consigo clica na seta de voltar e ir novamente.
+
+
+///////////////////////////////////////////////////////
+
+router-link e router-view 
+
+router-link.
+Observe como, em vez de usar atags regulares, usamos um componente personalizado router-linkpara criar links. Isso permite que o Vue Router altere a URL sem recarregar a página, gerencie a geração da URL e também sua codificação. Veremos mais tarde como se beneficiar desses recursos.
+
+router-view.
+router-viewexibirá o componente que corresponde à url. Você pode colocá-lo em qualquer lugar para adaptá-lo ao seu layout.

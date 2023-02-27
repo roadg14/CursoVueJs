@@ -1,0 +1,1 @@
+Site -> https://router.vuejs.org/guide/advanced/navigation-guards.html
