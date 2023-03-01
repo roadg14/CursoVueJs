@@ -41,7 +41,10 @@ export default {
         //    return this.$store.getters.valorTotal // Pegando a função lá do getters
         //},
         produtos() { // Indo pegar os produtos lá de store.js
-            return this.$store.state.produtos // Acessando os dados que estão la na store.js // Os produtos.
+            // Acessando a store.js quando é feito a mudança que o store importa o carrinho.js, parametros.js
+            // Antes -> return this.$store.state.produtos
+            //Novo
+            return this.$store.state.carrinho.produtos // Acessando os dados que estão la na store.js // Os produtos. 
         }
     }
 }

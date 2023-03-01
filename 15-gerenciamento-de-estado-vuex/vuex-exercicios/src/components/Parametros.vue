@@ -15,10 +15,27 @@
 
 <script>
 export default {
-    data() {
-        return {
-            quantidade: 0,
-            preco: 0
+    computed: {
+        quantidade: { // Propriedades Computadas.
+            get() { // Se eu quero ler um lavor que está na store.js
+                // Acessando a store.js quando é feito a mudança que o store importa o carrinho.js, parametros.js
+                // Modo Antes -> return this.$store.state.quantidade 
+                return this.$store.state.parametros.quantidade // NovoMODO DE CHAMAR
+            },
+            // set vai receber um novo valor
+            set(valor) { // Vai apontar.
+                this.$store.commit('setQuantidade', valor)
+            },
+            preco: {
+                get() {
+                    // Acessando a store.js quando é feito a mudança que o store importa o carrinho.js, parametros.js
+                // Modo Antes -> return this.$store.state.preco
+                    return this.$store.state.parametros.preco // NovoMODO DE CHAMAR
+                },
+                set(valor) {
+                    this.$store.commit('setPreco', valor)
+                }
+            }
         }
     }
 }

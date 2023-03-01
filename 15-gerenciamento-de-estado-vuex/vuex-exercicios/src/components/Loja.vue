@@ -12,14 +12,25 @@
 
 <script>
 // Importando tambem mapMutations é tambem uma forma de chamar o mutations.
-import { mapActions, mapMutations } from 'vuex'
-
+import { mapMutations } from 'vuex'
+// import { mapActions, mapMutations } from 'vuex'
 export default {
     data() {
         return {
-            sequencia: 1,
-            quantidade: 1,
-            preco: 9.99,
+            sequencia: 1
+        }
+    },
+    computed: { // Criando propriedades para ler a store
+        // Vuex e Two-Way-Binding (v-model)
+        quantidade() {
+            // Acessando a store.js quando é feito a mudança que o store importa o carrinho.js, parametros.js
+            // return this.$store.state.quantidade
+            return this.$store.state.parametros.quantidade
+        },
+        preco() {
+            // Acessando a store.js quando é feito a mudança que o store importa o carrinho.js, parametros.js
+            // return this.$store.state.preco
+            return this.$store.state.parametros.preco
         }
     },
     methods: {

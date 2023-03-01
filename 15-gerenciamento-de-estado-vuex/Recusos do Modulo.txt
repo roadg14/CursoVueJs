@@ -1,0 +1,6 @@
+Recursos do Módulo & Links Úteis
+O código final desenvolvido neste módulo pode ser encontrado anexado a esta aula!
+
+Links Úteis:
+
+Documentação do Vuex: https://vuex.vuejs.org/guide/
