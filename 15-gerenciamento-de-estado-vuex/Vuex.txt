@@ -1,0 +1,1 @@
+Instalando o VueX -> npm i --save vuex@3.0.1 -E
