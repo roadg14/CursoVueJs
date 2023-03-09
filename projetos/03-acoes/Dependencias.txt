@@ -1,1 +1,2 @@
 VueTify -> npm i vuetify
+VueRouter -> npm i --save vue-router
