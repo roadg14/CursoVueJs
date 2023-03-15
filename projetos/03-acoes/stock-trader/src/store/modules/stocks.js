@@ -1,3 +1,5 @@
+import stocks from '../../data/stocks'
+
 export default {
     state: { // State que vai ter uma lista de stocks varias.
         stocks: []
@@ -14,6 +16,11 @@ export default {
         // Iniciar os conjuntos que ações que eu tenho no projeto.
         initStocks({ commit }) { // Inicializar a lista de ações.
             commit('setStocks', stocks)
+        }
+    },
+    getters: {
+        stocks(state) {
+            return state.stocks
         }
     }
 }
