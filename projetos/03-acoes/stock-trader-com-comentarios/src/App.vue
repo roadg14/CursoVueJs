@@ -1,4 +1,5 @@
 <template>
+	<!-- Registrando algum componentes que foram geristrados de forma global do vuetify-->
 	<v-app>
 		<Header />
 		<v-content>
@@ -12,13 +13,14 @@
 </template>
 
 <script>
-import Header from './components/Header'
 
+//Imports
+import Header from './components/Header.vue'
 export default {
 	components: { Header },
 	created() {
 		this.$store.dispatch('initStocks')
-	}
+	},
 }
 </script>
 

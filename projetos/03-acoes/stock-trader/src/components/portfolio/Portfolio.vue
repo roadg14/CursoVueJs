@@ -5,15 +5,14 @@
 </template>
 
 <script>
-// Importando o mapGetters.
 import { mapGetters } from 'vuex'
 import Stock from './Stock'
 
 export default {
     components: { Stock },
-    computed: { // Computada para usar o mapGetters. // Propriedade computada.
+    computed: {
         ...mapGetters({
-            stocks: 'stockPortfolio'  
+            stocks: 'stockPortfolio'
         })
     }
 }
