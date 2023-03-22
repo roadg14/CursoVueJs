@@ -1,28 +1,30 @@
 <template>
-    <v-flex class="pr-3 pb-4" xs12 md6 lg4>
+    <v-flex class="pr-3 pb-3" xs12 md6 lg4>
         <v-card class="blue darken-3 white--text">
             <v-card-title class="headline">
                 <strong>
                     {{ stock.name }}
                     <small>
-                        (Preço: {{ stock.price }} | Qtde: {{ stock.quantity }})
+                        (Preço: {{ stock.price | currency }} | Qtde: {{ stock.quantity }})
                     </small>
                 </strong>
             </v-card-title>
         </v-card>
         <v-card>
-            <v-container fill-heigth>
-                <v-text-field label="Quantidade" type="number" v-model.number="quantity" />
-                    <b-btn class="blue darken-3 white--text" 
-                        :disabled="quantity <= 0 || !Number.isInterger(quantity)" 
-                        @click="sellStock">Vender</b-btn>
+            <v-container fill-height>
+                <v-text-field label="Quantidade" type="number"
+                    :error="insufficientQuantity || !Number.isInteger(quantity)"
+                    v-model.number="quantity" />
+                <v-btn class="blue darken-3 white--text"
+                    :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(quantity)"
+                    @click="sellStock">{{ insufficientQuantity ? 'Insuficiente' : 'Vender' }}</v-btn>
             </v-container>
         </v-card>
     </v-flex>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
     props: ['stock'],
@@ -45,10 +47,10 @@ export default {
                 quantity: this.quantity
             }
             this.sellStockAction(order)
-            // this.$store.dispath('sellStock', order)
+            // this.$store.dispatch('sellStock', order)
             this.quantity = 0
         }
-    },
+    }
 }
 </script>
 

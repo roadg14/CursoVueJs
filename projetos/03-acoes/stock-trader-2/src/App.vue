@@ -1,7 +1,6 @@
 <template>
-	<!-- Registrando algum componentes que foram geristrados de forma global do vuetify-->
 	<v-app>
-		<Header /> <!-- Importando e aplicando no App para que o cabeçalho fique sempre a mostrar -->
+		<Header />
 		<v-content>
 			<v-container>
 				<transition name="slide" mode="out-in">
@@ -13,15 +12,13 @@
 </template>
 
 <script>
-
-//Importando o Header que vai ser o cabeçalho da pagina.
-import Header from './components/Header.vue'
+import Header from './components/Header'
 
 export default {
 	components: { Header },
 	created() {
 		this.$store.dispatch('initStocks')
-	},
+	}
 }
 </script>
 

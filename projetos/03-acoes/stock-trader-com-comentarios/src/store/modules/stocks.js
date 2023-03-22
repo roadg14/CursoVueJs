@@ -5,7 +5,8 @@ export default {
         stocks: []
     },
     mutations: { // Esse setStocks vai ser para alterar as ações.
-        setStocks(state, stocks) {
+        // O primeiro paramentro de uma mutation sempre é o (state) depois voce colocar oque voce quer passar.
+        setStocks(state, stocks) {  
             state.stocks = stocks
         },
         randomizeStocks(state) {
@@ -14,9 +15,10 @@ export default {
             })
         }
     },
-    actions: { // buyStock vai ser a compra de stocks.
-        buyStock({ commit }, order) {
-            commit('buyStock', order)
+    actions: { 
+        // buyStock vai ser a compra de stocks.
+        buyStock({ commit }, order) { //
+            commit('buyStock', order) 
         },
         // Iniciar os conjuntos que ações que eu tenho no projeto.
         initStocks({ commit }) { // Inicializar a lista de ações.

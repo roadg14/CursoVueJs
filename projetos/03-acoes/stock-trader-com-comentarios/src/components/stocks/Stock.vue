@@ -4,7 +4,7 @@
     <v-flex class="pr-3 pb-4" xs12 md6 lg4>
        <v-card class="green darken-3 white--text">
         <v-card-title class="headline">
-            <strong>{{ stock.name}} <small>(Preço: {{ stock.price }})</small></strong>
+            <strong>{{ stock.name }} <small>(Preço: {{ stock.price }})</small></strong>
         </v-card-title>
        </v-card>
        <v-card>
@@ -38,11 +38,13 @@ export default {
     },
     methods: {
         buyStock() {
+            // Apóis fazer a comprar ai vai ser mandado para o Portfolio.
             const order = { // A ordem para a comprar.
                 stockId: this.stock.id, // Pegando a ação pelo ID e pelo Preço.
                 stockPrice: this.stock.price,
                 quantity: this.quantity // Pegando quantidade de lá do v-model.
             }
+            // Esse this.$store.dispath('buyStock', order) é responsavel por chamar actions que está em "./modules/stocks.js" 
             this.$store.dispath('buyStock', order)
             this.quantity = 0
         }

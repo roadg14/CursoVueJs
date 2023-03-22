@@ -1,18 +1,16 @@
 <template>
-    <!-- row é uma linha e quero que essa linha quebre com 'row wrap' -->
     <v-layout row wrap>
         <Stock v-for="stock in stocks" :key="stock.id" :stock="stock" />
     </v-layout>
 </template>
 
 <script>
-// Importando o Stock para usar o template que foi criado lá.
-import Stock from './Stock.vue';
+import Stock from './Stock'
 
 export default {
     components: { Stock },
     computed: {
-        stock() {
+        stocks() {
             return this.$store.getters.stocks
         }
     }
