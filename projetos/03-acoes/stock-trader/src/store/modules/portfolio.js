@@ -1,7 +1,7 @@
 export default {
     // 
-    state: { //
-        funds: 1000, // saldo em conta
+    state: { // funds é o Saldo.
+        funds: 10000, // saldo em conta
         stocks: [] // Quantidade que voce tem em conta
     },
     mutations: { // A mutations vai ser responsavel para muda os estados do state.
@@ -34,6 +34,15 @@ export default {
             }
             // Ajustando o Salto.
             state.funds += stockPrice * quantity
+        },
+        // esse setPortfolio vai receber o primeiro parametro state. e o segundo o proprio portFolio 
+        // Dentro do portfolio vai ter os valores de saldo e vai os de stoks tambem.
+        setPortfolio(state, portfolio) {
+            state.funds = portfolio.funds
+            // Oque pode acontecer é não ter o portfolio, caso não compre nada
+            // Quando se não for comprando nenhuma ação é bom mandar em uma array vazia. 
+            state.stocks = portfolio.stockPortfolio ? portfolio.stockPortfolio : []
+            // Vamos usar outro arquivo que é outro fora de modules que é action.js
         }
     },
     actions: {

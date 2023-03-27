@@ -1,2 +1,4 @@
 VueTify -> npm i vuetify
 VueRouter -> npm i --save vue-router
+Vuex -> npm i --save vuex
+Axios -> npm i --save axios
